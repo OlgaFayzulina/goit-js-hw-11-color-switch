@@ -1,8 +1,8 @@
 
 const refs = {
-    body: document.querySelector('body'),
-    startBtn: document.querySelector('[data-action="start"]'),
-    stopBtn: document.querySelector('[data-action="stop"]')
+    bodyEl: document.querySelector('body'),
+    startBtnEl: document.querySelector('[data-action="start"]'),
+    stopBtnEl: document.querySelector('[data-action="stop"]')
 }
 
 const colors = [
@@ -20,14 +20,14 @@ const randomIntegerFromInterval = (min, max) => {
 
 let setIntervalId = null;
 
-refs.startBtn.addEventListener('click', () => {
+refs.startBtnEl.addEventListener('click', () => {
    setIntervalId = setInterval(() => {
-        refs.body.style.background = colors[randomIntegerFromInterval(0, 5)]
+        refs.bodyEl.style.background = colors[randomIntegerFromInterval(0, 5)]
    }, 1000);
-    refs.startBtn.disabled = true;
+    refs.startBtnEl.disabled = true;
 });
 
-refs.stopBtn.addEventListener('click', () => {
+refs.stopBtnEl.addEventListener('click', () => {
     clearInterval(setIntervalId);
-    refs.startBtn.disabled = false;
+    refs.startBtnEl.disabled = false;
 })
