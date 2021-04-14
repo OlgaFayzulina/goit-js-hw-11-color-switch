@@ -22,7 +22,7 @@ let setIntervalId = null;
 
 refs.startBtnEl.addEventListener('click', () => {
    setIntervalId = setInterval(() => {
-        refs.bodyEl.style.background = colors[randomIntegerFromInterval(0, 5)]
+        refs.bodyEl.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length - 1)]
    }, 1000);
     refs.startBtnEl.disabled = true;
 });
